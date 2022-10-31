@@ -87,8 +87,8 @@ group.add_argument('--dataset', '-d', metavar='NAME', default='',
                     help='dataset type (default: ImageFolder/ImageTar if empty)')
 group.add_argument('--train-split', metavar='NAME', default='train',
                     help='dataset train split (default: train)')
-group.add_argument('--val-split', metavar='NAME', default='validation',
-                    help='dataset validation split (default: validation)')
+group.add_argument('--val-split', metavar='NAME', default='val',
+                    help='dataset validation split (default: val)')
 group.add_argument('--dataset-download', action='store_true', default=False,
                     help='Allow download of dataset for torch/ and tfds/ datasets that support it.')
 group.add_argument('--class-map', default='', type=str, metavar='FILENAME',
