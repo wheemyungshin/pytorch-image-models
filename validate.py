@@ -156,7 +156,7 @@ def validate(args):
             assert args.amp_dtype in ('float16', 'bfloat16')
             use_amp = 'native'
             amp_dtype = torch.bfloat16 if args.amp_dtype == 'bfloat16' else torch.float16
-            amp_autocast = partial(torch.autocast, device_type=device.type, dtype=amp_dtype)
+            amp_autocast = torch.cuda.amp.autocast
             _logger.info('Validating in mixed precision with native PyTorch AMP.')
     else:
         _logger.info('Validating in float32. AMP not enabled.')

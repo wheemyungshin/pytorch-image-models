@@ -504,7 +504,7 @@ def main():
         if utils.is_primary(args):
             _logger.info('Using NVIDIA APEX AMP. Training in mixed precision.')
     elif use_amp == 'native':
-        amp_autocast = partial(torch.autocast, device_type=device.type, dtype=amp_dtype)
+        amp_autocast = torch.cuda.amp.autocast
         if device.type == 'cuda':
             loss_scaler = NativeScaler()
         if utils.is_primary(args):
